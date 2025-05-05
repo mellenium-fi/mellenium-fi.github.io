@@ -1,7 +1,87 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Display Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .top-section {
+      height: 25vh;
+      padding: 20px;
+      background-color: #f0f0f0;
+    }
+
+    .bottom-section {
+      display: flex;
+      height: 75vh;
+    }
+
+    .left-panel {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+      background-color: #ffffff;
+    }
+
+    .right-panel {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #e8e8e8;
+    }
+
+    .entity {
+      margin-bottom: 20px;
+    }
+
+    .entity-title {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .data-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 4px 0;
+    }
+
+    .label {
+      font-weight: bold;
+      margin-right: 10px;
+    }
+  </style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+
+  <div class="top-section">
+    <h1>Project Testing: WIP</h1>
+    <p>Basic information will be here</p>
+  </div>
+
+  <div class="bottom-section">
+    <div class="left-panel" id="data-container">
+      <!-- Entities and data rows will go here -->
+      <div class="entity">
+        <div class="entity-title">Location 1</div>
+        <div class="data-row"><span class="label">Data time:</span> <span>05.05.2025 12:00</span></div>
+        <div class="data-row"><span class="label">Forecast time:</span> <span>06-05-2025 12:00</span></div>
+        <div class="data-row"><span class="label">Condition:</span> <span>Normal</span></div>
+      </div>
+
+
+      <!-- Repeat for other entities... -->
+    </div>
+
+    <div class="right-panel">
+      <img src="images/laku.jpeg" alt="Static Display" style="max-width: 100%; max-height: 100%;" />
+    </div>
+  </div>
+
 </body>
 </html>
