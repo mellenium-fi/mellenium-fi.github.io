@@ -61,7 +61,7 @@
 
   <div class="top-section">
     <h1>Project Testing: WIP</h1>
-    <p>Basic information will be here</p>
+    <p>Basic information will be here, updated</p>
   </div>
 
 
