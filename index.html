@@ -87,7 +87,40 @@
   </div>
 
 
+<script>
+  const apiUrl = 'https://qyse0liqlj.execute-api.eu-west-1.amazonaws.com/dev/read?entity=203';
 
+  fetch(apiUrl, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      // Include this only if your route requires an API key:
+      // 'x-api-key': 'your-api-key-here'
+    }
+  })
+  .then(response => {
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+    return response.json();
+  })
+  .then(data => {
+    // Update DOM elements — this assumes you’re targeting specific divs inside #data-container
+    const container = document.getElementById('data-container');
+    container.innerHTML = `
+      <div class="entity">
+        <div class="entity-title">${data.EntityName || 'Entity 1'}</div>
+        <div class="data-row"><span class="label">Forecast creation time:</span> <span>${data.currentTime}</span></div>
+        <div class="data-row"><span class="label">Forecast time:</span> <span>${data.forecastTime}</span></div>
+        <div class="data-row"><span class="label">Condition:</span> <span>${data.condition}</span></div>
+      </div>
+    `;
+  })
+  .catch(err => {
+    console.error('Error fetching data:', err);
+  });
+</script>
+
+
+  <!-- old for HTTP api
   <script>
     const apiUrl = 'https://oeuvdcxyte.execute-api.eu-west-1.amazonaws.com/Read?entity=203';
 
@@ -115,6 +148,8 @@
         document.getElementById('data-container').innerHTML = `<p style="color: red;">Failed to load data: ${error.message}</p>`;
       });
   </script>
+  -->
+
 
 </body>
 </html>
