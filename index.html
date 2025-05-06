@@ -72,9 +72,9 @@
       <!-- Entities and data rows will go here -->
       <div class="entity">
         <div class="entity-title">Location 1</div>
-        <div class="data-row"><span class="label">Data time:</span> <span>05.05.2025 12:00</span></div>
-        <div class="data-row"><span class="label">Forecast time:</span> <span>06-05-2025 12:00</span></div>
-        <div class="data-row"><span class="label">Condition:</span> <span>Normal</span></div>
+        <div class="data-row"><span class="label">Forecast creation time:</span> <span>No data</span></div>
+        <div class="data-row"><span class="label">Forecast time:</span> <span>No data</span></div>
+        <div class="data-row"><span class="label">Road condition:</span> <span>No data</span></div>
       </div>
 
 
@@ -103,9 +103,9 @@
         const html = `
           <div class="entity">
             <div class="entity-title">Entity: ${data.EntityName || 'Unknown'}</div>
-            <div class="data-row"><span class="label">Current Time:</span> <span>${CurrentTime}</span></div>
+            <div class="data-row"><span class="label">Forecast creation time:</span> <span>${CurrentTime}</span></div>
             <div class="data-row"><span class="label">Forecast Time:</span> <span>${ForecastTime}</span></div>
-            <div class="data-row"><span class="label">Condition:</span> <span>${Condition}</span></div>
+            <div class="data-row"><span class="label">Road condition:</span> <span>${Condition}</span></div>
           </div>
       `   ;
 
