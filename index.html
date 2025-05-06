@@ -108,7 +108,7 @@
     //container.innerHTML = `
     const html = `
       <div class="entity">
-        <div class="entity-title">${data.EntityName || 'Entity 1'}</div>
+        <div class="entity-title">Entity: ${data.EntityName || 'Unknown'}</div>
         <div class="data-row"><span class="label">Forecast creation time:</span> <span>${data.currentTime}</span></div>
         <div class="data-row"><span class="label">Forecast time:</span> <span>${data.forecastTime}</span></div>
         <div class="data-row"><span class="label">Condition:</span> <span>${data.condition}</span></div>
