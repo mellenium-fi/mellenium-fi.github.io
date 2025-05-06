@@ -61,8 +61,11 @@
 
   <div class="top-section">
     <h1>Project Testing: WIP</h1>
-    <p>Basic information will be here</p>
+    <p>Basic information will be here, updated</p>
   </div>
+
+
+
 
   <div class="bottom-section">
     <div class="left-panel" id="data-container">
@@ -82,6 +85,36 @@
       <img src="images/laku.jpeg" alt="Static Display" style="max-width: 100%; max-height: 100%;" />
     </div>
   </div>
+
+
+
+  <script>
+    const apiUrl = 'https://oeuvdcxyte.execute-api.eu-west-1.amazonaws.com/Read?entity=203';
+
+    fetch(apiUrl)
+      .then(response => {
+        if (!response.ok) throw new Error('API request failed');
+        return response.json();
+      })
+      .then(data => {
+        const { currentTime, forecastTime, condition } = data;
+
+        // Build HTML content dynamically
+        const html = `
+          <div class="entity">
+            <div class="entity-title">Entity: ${data.EntityName || 'Unknown'}</div>
+            <div class="data-row"><span class="label">Current Time:</span> <span>${currentTime}</span></div>
+            <div class="data-row"><span class="label">Forecast Time:</span> <span>${forecastTime}</span></div>
+            <div class="data-row"><span class="label">Condition:</span> <span>${condition}</span></div>
+          </div>
+      `   ;
+
+        document.getElementById('data-container').innerHTML = html;
+      })
+      .catch(error => {
+        document.getElementById('data-container').innerHTML = `<p style="color: red;">Failed to load data: ${error.message}</p>`;
+      });
+  </script>
 
 </body>
 </html>
