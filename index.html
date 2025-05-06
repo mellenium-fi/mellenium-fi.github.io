@@ -94,29 +94,30 @@
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
-      // Include this only if your route requires an API key:
+      // ✅ Only include this if you enabled API key requirement:
       // 'x-api-key': 'your-api-key-here'
     }
   })
   .then(response => {
-    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+    if (!response.ok) throw new Error('API request failed');
     return response.json();
   })
   .then(data => {
-    // Update DOM elements — this assumes you’re targeting specific divs inside #data-container
-    //const container = document.getElementById('data-container');
-    //container.innerHTML = `
+    const { CurrentTime, ForecastTime, Condition } = data;
+
     const html = `
       <div class="entity">
         <div class="entity-title">Entity: ${data.EntityName || 'Unknown'}</div>
-        <div class="data-row"><span class="label">Forecast creation time:</span> <span>${data.CurrentTime}</span></div>
-        <div class="data-row"><span class="label">Forecast time:</span> <span>${data.ForecastTime}</span></div>
-        <div class="data-row"><span class="label">Condition:</span> <span>${data.Condition}</span></div>
+        <div class="data-row"><span class="label">Forecast creation time:</span> <span>${CurrentTime}</span></div>
+        <div class="data-row"><span class="label">Forecast time:</span> <span>${ForecastTime}</span></div>
+        <div class="data-row"><span class="label">Road condition:</span> <span>${Condition}</span></div>
       </div>
     `;
+
+    document.getElementById('data-container').innerHTML = html;
   })
-  .catch(err => {
-    console.error('Error fetching data:', err);
+  .catch(error => {
+    document.getElementById('data-container').innerHTML = `<p style="color: red;">Failed to load data: ${error.message}</p>`;
   });
 </script>
 
