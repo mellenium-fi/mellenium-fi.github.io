@@ -104,8 +104,9 @@
   })
   .then(data => {
     // Update DOM elements — this assumes you’re targeting specific divs inside #data-container
-    const container = document.getElementById('data-container');
-    container.innerHTML = `
+    //const container = document.getElementById('data-container');
+    //container.innerHTML = `
+    const html = `
       <div class="entity">
         <div class="entity-title">${data.EntityName || 'Entity 1'}</div>
         <div class="data-row"><span class="label">Forecast creation time:</span> <span>${data.currentTime}</span></div>
