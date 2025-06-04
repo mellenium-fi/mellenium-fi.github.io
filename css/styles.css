@@ -50,6 +50,12 @@ main {
   /*margin-top: auto;*/
 }
 
+.section1 ul,
+.section3 ul {
+  padding-left: 1rem;  /* sisennys vasemmalta bullet-listalle */
+  /* margin-left: 1rem;    halutessasi lisämarginaalia listalle */
+}
+
 /* Palvelut jaoteltuna 3 osaan */
 .services {
   display: flex;
