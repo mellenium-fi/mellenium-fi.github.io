@@ -19,7 +19,7 @@ body {
   flex: 1;
   min-height: 25vh;
   padding: 2rem;
-  padding-left: 200px; /*2rem tai esim. 20px */
+  padding-left: 2rem; /*2rem tai esim. 20px */
   color: white;
 }
 
