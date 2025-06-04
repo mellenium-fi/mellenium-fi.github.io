@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1.6;
+}
+
+.section {
+  padding: 2rem;
+  color: white;
+}
+
+.section1 {
+  background-color: #1e3a8a; /* tummansininen */
+}
+
+.section2 {
+  background-color: #2563eb; /* sininen */
+}
+
+.section3 {
+  background-color: #3b82f6; /* vaaleampi sininen */
+}
+
+.section4 {
+  background-color: #60a5fa; /* vielä vaaleampi sininen */
+}
+
+/* Palvelut jaoteltuna 3 osaan */
+.services {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.service {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+/* Desktop-näytöille */
+@media (min-width: 768px) {
+  .services {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .service {
+    flex: 1;
+  }
+}
